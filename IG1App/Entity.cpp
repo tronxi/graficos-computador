@@ -86,7 +86,33 @@ void TrianguloRGB::render(dmat4 const& modelViewMat) const
 		glColor3d(mColor.r, mColor.g, mColor.b);
 		mMesh->render();
 		glColor3d(1, 1, 1);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+}
+
+RectanguloRGB::RectanguloRGB(GLdouble w, GLdouble h) : Abs_Entity()
+{
+	mMesh = Mesh::generaRectanguloRGB(w,h);
+}
+//-------------------------------------------------------------------------
+
+RectanguloRGB::~RectanguloRGB()
+{
+	delete mMesh; mMesh = nullptr;
+};
+//-------------------------------------------------------------------------
+
+void RectanguloRGB::render(dmat4 const& modelViewMat) const
+{
+	if (mMesh != nullptr) {
+		dmat4 aMat = modelViewMat * mModelMat;  // glm matrix multiplication
+		upload(aMat);
+		glPolygonMode(GL_FRONT, GL_FILL);
+		glPolygonMode(GL_BACK, GL_LINE);
+		glColor3d(mColor.r, mColor.g, mColor.b);
+		mMesh->render();
+		glColor3d(1, 1, 1);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 }
  

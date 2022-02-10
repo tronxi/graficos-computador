@@ -16,6 +16,8 @@ public:
 	static Mesh* createRGBAxes(GLdouble l); // creates a new 3D-RGB axes mesh
 	static Mesh* generaPoligonoRegular(GLuint num, GLdouble r);
 	static Mesh* generaTrianguloRGB(GLdouble r);
+	static Mesh* generaRectangulo(GLdouble w, GLdouble h);
+	static Mesh* generaRectanguloRGB(GLdouble w, GLdouble h);
 	
 	Mesh() {};
 	virtual ~Mesh() {};

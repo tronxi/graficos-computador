@@ -25,7 +25,8 @@ void Scene::init()
 	magentaCircle->setColor({ 255.0, 0.0, 255.0, 1.0 });
 	gObjects.push_back(magentaCircle);
 
-	gObjects.push_back(new TrianguloRGB(60));
+	//gObjects.push_back(new TrianguloRGB(60));
+	gObjects.push_back(new RectanguloRGB(100, 60));
 	
 }
 //-------------------------------------------------------------------------
