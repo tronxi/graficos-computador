@@ -1,2 +1,11 @@
-﻿  Entity.cpp
-  IG1App.vcxproj -> C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\bin\IG1AppDebug.exe
+﻿  Camera.cpp
+  Entity.cpp
+  IG1App.cpp
+  main.cpp
+  Mesh.cpp
+C:\Users\amali\source\repos\tronxi\graficos-computador\IG1App\Mesh.cpp(78,23): warning C4018: '<': no coinciden signed/unsigned
+  Scene.cpp
+C:\Users\amali\source\repos\tronxi\graficos-computador\IG1App\Scene.cpp(45,33): warning C4305: 'argumento': truncamiento de 'double' a 'GLclampf'
+  Viewport.cpp
+  Generando código...
+  IG1App.vcxproj -> C:\Users\amali\source\repos\tronxi\graficos-computador\bin\IG1AppDebug.exe
