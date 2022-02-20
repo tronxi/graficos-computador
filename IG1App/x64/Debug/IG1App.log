@@ -1,7 +1,2 @@
-﻿  Entity.cpp
-  IG1App.cpp
-  Scene.cpp
-C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\IG1App\Scene.cpp(48,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-  main.cpp
-  Generating Code...
+﻿  LINK : C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\bin\IG1AppDebug.exe not found or not built by the last incremental link; performing full link
   IG1App.vcxproj -> C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\bin\IG1AppDebug.exe
