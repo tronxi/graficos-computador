@@ -15,7 +15,7 @@
 class Scene	
 { 
 public:
-	Scene() {};
+	Scene(): mId(0) {};
 	~Scene() { free(); resetGL(); };
 
 	Scene(const Scene& s) = delete;  // no copy constructor
@@ -24,11 +24,17 @@ public:
 	void init();
 
     void render(Camera const& cam) const;
+	void setState(int id);
+	virtual void update();
+
 	
 protected:
 	void free();
 	void setGL();
 	void resetGL();
+	void setScene(int id) { mId = id; };
+
+	int mId;
 
 	std::vector<Abs_Entity*> gObjects;  // Entities (graphic objects) of the scene
 };

@@ -128,3 +128,57 @@ Mesh* Mesh::generaRectanguloRGB(GLdouble w, GLdouble h)
     return mesh;
 }
 
+Mesh* Mesh::generaCubo(GLdouble longitud)
+{
+    Mesh* mesh = new Mesh();
+
+    mesh->mPrimitive = GL_TRIANGLE_STRIP;
+
+    mesh->mNumVertices = 14;
+    mesh->vVertices.reserve(mesh->mNumVertices);
+
+    GLdouble size = longitud / 2;
+
+    mesh->vVertices.push_back({ size, size, -size });
+    mesh->vVertices.push_back({ -size, size, -size });
+    mesh->vVertices.push_back({ size, -size, -size });
+    mesh->vVertices.push_back({ -size, -size, -size });
+    mesh->vVertices.push_back({ -size, -size, size });
+    mesh->vVertices.push_back({ -size, size, -size });
+    mesh->vVertices.push_back({ -size, size, size });
+    mesh->vVertices.push_back({ size, size, -size });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ size, -size, -size });
+    mesh->vVertices.push_back({ size, -size, size });
+    mesh->vVertices.push_back({ -size, -size, size });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ -size, size, size });
+
+
+    return mesh;
+}
+
+Mesh* Mesh::generaCuboTriangulosRGB(GLdouble longitud)
+{
+    Mesh* mesh = generaCubo(longitud);
+    mesh->mPrimitive = GL_TRIANGLE_STRIP;
+    mesh->vColors.reserve(mesh->mNumVertices);
+
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    return mesh;
+}

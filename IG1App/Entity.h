@@ -27,6 +27,8 @@ public:
 	void setColor(glm::dvec4 color) { mColor = color; };
 	glm::dvec4 getColor() { return mColor; }
 
+	virtual void update() {};
+
 	
 protected:
 
@@ -61,6 +63,10 @@ public:
 	explicit TrianguloRGB(GLdouble rad);
 	~TrianguloRGB();
 	virtual void render(glm::dmat4 const& modelViewMat) const;
+	virtual void update() override;
+private:
+	GLdouble traslationAng; 
+	GLdouble rotationAng;
 };
 
 class RectanguloRGB : public Abs_Entity
@@ -68,6 +74,22 @@ class RectanguloRGB : public Abs_Entity
 public:
 	explicit RectanguloRGB(GLdouble w, GLdouble h);
 	~RectanguloRGB();
+	virtual void render(glm::dmat4 const& modelViewMat) const;
+};
+
+class Cubo : public Abs_Entity
+{
+public:
+	explicit Cubo(GLdouble longitud);
+	~Cubo();
+	virtual void render(glm::dmat4 const& modelViewMat) const;
+};
+
+class CuboRGB : public Abs_Entity
+{
+public:
+	explicit CuboRGB(GLdouble longitud);
+	~CuboRGB();
 	virtual void render(glm::dmat4 const& modelViewMat) const;
 };
 
