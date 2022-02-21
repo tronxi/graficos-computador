@@ -172,12 +172,9 @@ void CuboRGB::render(dmat4 const& modelViewMat) const
 	if (mMesh != nullptr) {
 		dmat4 aMat = modelViewMat * mModelMat;  // glm matrix multiplication
 		upload(aMat);
-		glPolygonMode(GL_FRONT, GL_FILL);
-		glPolygonMode(GL_BACK, GL_POINT);
 		glColor3d(mColor.r, mColor.g, mColor.b);
 		mMesh->render();
 		glColor3d(1, 1, 1);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 }
  

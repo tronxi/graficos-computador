@@ -128,7 +128,7 @@ Mesh* Mesh::generaRectanguloRGB(GLdouble w, GLdouble h)
     return mesh;
 }
 
-Mesh* Mesh::generaCubo(GLdouble longitud)
+/*Mesh* Mesh::generaCubo(GLdouble longitud)
 {
     Mesh* mesh = new Mesh();
 
@@ -156,14 +156,78 @@ Mesh* Mesh::generaCubo(GLdouble longitud)
 
 
     return mesh;
+}*/
+
+Mesh* Mesh::generaCubo(GLdouble longitud)
+{
+    Mesh* mesh = new Mesh();
+
+    mesh->mPrimitive = GL_TRIANGLES;
+
+    mesh->mNumVertices = 36;
+    mesh->vVertices.reserve(mesh->mNumVertices);
+
+    GLdouble size = longitud / 2;
+    //FRONT
+    mesh->vVertices.push_back({ 0, size, size });
+    mesh->vVertices.push_back({ 0, 0, size });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ 0, 0, size });
+    mesh->vVertices.push_back({ size, 0, size });
+
+    //BACK
+    mesh->vVertices.push_back({ 0, size, 0 });
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ size, size, 0 });
+    mesh->vVertices.push_back({ size, size, 0 });
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ size, 0, 0 });
+
+    //UP
+    mesh->vVertices.push_back({ 0, size, 0 });
+    mesh->vVertices.push_back({ 0, size, size });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ 0, size, 0 });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ size, size, 0 });
+
+    //DOWN
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ 0, 0, size });
+    mesh->vVertices.push_back({ size, 0, size });
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ size, 0, size });
+    mesh->vVertices.push_back({ size, 0, 0 });
+
+    //LEFT
+    mesh->vVertices.push_back({ 0, size, 0 });
+    mesh->vVertices.push_back({ 0, size, size });
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ 0, 0, 0 });
+    mesh->vVertices.push_back({ 0, size, size });
+    mesh->vVertices.push_back({ 0, 0, size });
+
+
+    //RIGHT
+    mesh->vVertices.push_back({ size, size, 0 });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ size, 0, 0 });
+    mesh->vVertices.push_back({ size, 0, 0 });
+    mesh->vVertices.push_back({ size, size, size });
+    mesh->vVertices.push_back({ size, 0, size });
+
+    return mesh;
 }
+
+
 
 Mesh* Mesh::generaCuboTriangulosRGB(GLdouble longitud)
 {
     Mesh* mesh = generaCubo(longitud);
-    mesh->mPrimitive = GL_TRIANGLE_STRIP;
+    mesh->mPrimitive = GL_TRIANGLES;
     mesh->vColors.reserve(mesh->mNumVertices);
-
+    //FRONT
     mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
@@ -171,14 +235,40 @@ Mesh* Mesh::generaCuboTriangulosRGB(GLdouble longitud)
     mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
 
+    //BACK
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 1.0, 0.0, 0.0, 1.0 });
+    //up
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    //down
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    //left
     mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
     mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
-    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
-    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
-
-    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
-    mesh->vColors.push_back({ 0.0, 0.0, 1.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    //right
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
+    mesh->vColors.push_back({ 0.0, 1.0, 0.0, 1.0 });
     return mesh;
 }
