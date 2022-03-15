@@ -1,3 +1,11 @@
-﻿  Mesh.cpp
+﻿  Camera.cpp
+  Entity.cpp
+  IG1App.cpp
+  main.cpp
+  Mesh.cpp
 C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\IG1App\Mesh.cpp(78,23): warning C4018: '<': signed/unsigned mismatch
+  Scene.cpp
+C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\IG1App\Scene.cpp(48,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  Viewport.cpp
+  Generating Code...
   IG1App.vcxproj -> C:\Users\alejandroaizelboto\Desktop\workspace\graficos\ProyectosIG_x64_VS2019_FG\bin\IG1AppDebug.exe
